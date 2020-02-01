@@ -17,19 +17,19 @@
 [ext_resource path="res://proto2/player/assets/walk3.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 86.981, 143.976 )
+extents = Vector2( 53.27, 129.92 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "fall",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
@@ -45,22 +45,25 @@ animations = [ {
 [node name="player_run" type="KinematicBody2D"]
 position = Vector2( 208.019, 198.976 )
 scale = Vector2( 0.3, 0.3 )
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.941176, 0.00392157, 0.996078, 1 )
+position = Vector2( 0, 16.7467 )
 shape = SubResource( 1 )
 
 [node name="FSM" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( -80.019, 141.024 )
+position = Vector2( -53.3967, 146.747 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
-position = Vector2( 80.981, 142.024 )
+position = Vector2( 53.27, 146.747 )
 scale = Vector2( 1.27817, 1.27817 )
 enabled = true
 cast_to = Vector2( 0, 5 )

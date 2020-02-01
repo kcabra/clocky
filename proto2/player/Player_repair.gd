@@ -21,9 +21,9 @@ func get_input_dir():
 
 func _physics_process(delta):
     if move_vec.x > 0:
-        sprite.flip_h = false
-    elif move_vec.x < 0:
         sprite.flip_h = true
+    elif move_vec.x < 0:
+        sprite.flip_h = false
     
     if move_vec.y < -MOVE_TOLERANCE:
         sprite.frame = 2
