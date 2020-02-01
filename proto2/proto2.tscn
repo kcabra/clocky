@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://proto2/game_mode.gd" type="Script" id=1]
+[ext_resource path="res://proto2/holders/bg torre.png" type="Texture" id=2]
+[ext_resource path="res://proto2/holders/ph-chao.png" type="Texture" id=3]
+[ext_resource path="res://proto2/holders/ph-parede.png" type="Texture" id=4]
+[ext_resource path="res://proto2/holders/ph-parede2.png" type="Texture" id=5]
+[ext_resource path="res://proto2/holders/ph-bg-atmosferapng.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 46.0001 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 46, 314 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 46, 314 )
+
+[node name="proto2" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="bg" type="Sprite" parent="Level"]
+position = Vector2( 0, -48 )
+z_index = -1
+texture = ExtResource( 2 )
+centered = false
+
+[node name="spawn" type="Position2D" parent="Level" groups=[
+"spawn",
+]]
+position = Vector2( 250, 549 )
+
+[node name="chao" type="StaticBody2D" parent="Level"]
+position = Vector2( 640, 674 )
+
+[node name="Sprite" type="Sprite" parent="Level/chao"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/chao"]
+visible = false
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="parede" type="StaticBody2D" parent="Level"]
+
+[node name="left" type="CollisionShape2D" parent="Level/parede"]
+position = Vector2( 107, 314 )
+shape = SubResource( 2 )
+
+[node name="ph-parede" type="Sprite" parent="Level/parede/left"]
+texture = ExtResource( 4 )
+
+[node name="right" type="CollisionShape2D" parent="Level/parede"]
+position = Vector2( 1173, 314 )
+shape = SubResource( 3 )
+
+[node name="ph-parede2" type="Sprite" parent="Level/parede/right"]
+texture = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
+centered = false

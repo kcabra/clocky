@@ -1,0 +1,70 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://proto2/player/Player_run.gd" type="Script" id=1]
+[ext_resource path="res://proto2/player/FSM_run.gd" type="Script" id=2]
+[ext_resource path="res://proto2/player/assets/jump3.png" type="Texture" id=3]
+[ext_resource path="res://proto2/player/assets/jump2.png" type="Texture" id=4]
+[ext_resource path="res://proto2/player/assets/jump7.png" type="Texture" id=5]
+[ext_resource path="res://proto2/player/assets/jump5.png" type="Texture" id=6]
+[ext_resource path="res://proto2/player/assets/jump6.png" type="Texture" id=7]
+[ext_resource path="res://proto2/player/assets/jump4.png" type="Texture" id=9]
+[ext_resource path="res://proto2/player/assets/jump1.png" type="Texture" id=10]
+[ext_resource path="res://proto2/player/assets/stand.png" type="Texture" id=11]
+[ext_resource path="res://proto2/player/assets/walk2.png" type="Texture" id=12]
+[ext_resource path="res://proto2/player/assets/walk1.png" type="Texture" id=13]
+[ext_resource path="res://proto2/player/assets/walk4.png" type="Texture" id=14]
+[ext_resource path="res://proto2/player/assets/walk5.png" type="Texture" id=15]
+[ext_resource path="res://proto2/player/assets/walk3.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 86.981, 143.976 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "fall",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+} ]
+
+[node name="player_run" type="KinematicBody2D"]
+position = Vector2( 208.019, 198.976 )
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.941176, 0.00392157, 0.996078, 1 )
+shape = SubResource( 1 )
+
+[node name="FSM" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -80.019, 141.024 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2( 80.981, 142.024 )
+scale = Vector2( 1.27817, 1.27817 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "fall"
