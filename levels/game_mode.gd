@@ -12,43 +12,43 @@ onready var camera = $Camera
 var player
 
 func _enter_tree():
-    player_run = preload(PLAYER_RUN_SCENE_PATH)
-    player_repair = preload(PLAYER_REPAIR_SCENE_PATH)
+	player_run = preload(PLAYER_RUN_SCENE_PATH)
+	player_repair = preload(PLAYER_REPAIR_SCENE_PATH)
 
 func _ready():
-    camera.connect("level_changed", self, "_on_level_changed")
-    timer.connect("timeout", self, "_on_level_timeout")
-    godmode = !godmode
-    switch_mode()
+	camera.connect("level_changed", self, "_on_level_changed")
+	timer.connect("timeout", self, "_on_level_timeout")
+	godmode = !godmode
+	switch_mode()
 
 func _on_level_timeout():
-    if !godmode:
-        get_tree().call_group("placed", "queue_free")
-    switch_mode()
+	if !godmode:
+		get_tree().call_group("placed", "queue_free")
+	switch_mode()
 
 func _on_level_changed():
-    current_level += 1
+	current_level += 1
 
 func switch_mode():
-    if player: player.die()
-    godmode = !godmode
-    if godmode:
-        $Modulator.play("modulate")
-        get_tree().call_group("placed", "queue_free")
-        player = player_repair.instance()
-        get_tree().set_group("level_transition", "one_way_collision", false)
-    else:
-        $Modulator.play_backwards("modulate")
-        player = player_run.instance()
-        get_tree().set_group("level_transition", "one_way_collision", true)
-    # assumes there's only one spawn active, must remove
-    # old spawn before adding a new one.
-    var spawn_array = get_tree().get_nodes_in_group("spawn")
-    player.position = spawn_array[current_level - 1].global_position
-    add_child(player)
-    timer.start()
+	if player: player.die()
+	godmode = !godmode
+	if godmode:
+		$Modulator.play("modulate")
+		get_tree().call_group("placed", "queue_free")
+		player = player_repair.instance()
+		get_tree().set_group("level_transition", "one_way_collision", false)
+	else:
+		$Modulator.play_backwards("modulate")
+		player = player_run.instance()
+		get_tree().set_group("level_transition", "one_way_collision", true)
+	# assumes there's only one spawn active, must remove
+	# old spawn before adding a new one.
+	var spawn_array = get_tree().get_nodes_in_group("spawn")
+	player.position = spawn_array[current_level - 1].global_position
+	add_child(player)
+	timer.start()
 
 func _process(delta):
-    $"UI/Label".text = String(floor(timer.time_left))
-    if Input.is_action_just_pressed("ui_page_down"):
-        switch_mode()
+	$"UI/Label".text = String(floor(timer.time_left))
+	if Input.is_action_just_pressed("ui_page_down"):
+		switch_mode()
