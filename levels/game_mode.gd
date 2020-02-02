@@ -50,5 +50,5 @@ func switch_mode():
 
 func _process(delta):
     $"UI/Label".text = String(floor(timer.time_left))
-    if Input.is_action_just_pressed("ui_page_down"):
+    if Input.is_action_just_pressed("reset"):
         switch_mode()

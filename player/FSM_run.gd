@@ -82,7 +82,7 @@ func _enter_state(new_state, old_state):
             if jump_timer < 0 and parent.move_vec.x < MOVE_TOLERANCE:
                 sprite.animation = "stand"
                 sprite.frame = 0
-                sprite.playing = false
+                sprite.playing = true
         states.walk:
             sprite.animation = "walk"
             sprite.playing = true

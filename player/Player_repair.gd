@@ -42,21 +42,20 @@ func halt():
 
 func _physics_process(delta):
     if !block:
-        sprite.animation = "default"
-        sprite.playing = false
-        if move_vec.x >= 0:
-            sprite.flip_h = true
-        elif move_vec.x < 0:
-            sprite.flip_h = false
-            
-        if move_vec.y < -MOVE_TOLERANCE:
-            sprite.frame = 2
-        elif move_vec.y > MOVE_TOLERANCE:
-            sprite.frame = 3
-        elif abs(move_vec.x) > MOVE_TOLERANCE:
-            sprite.frame = 1
-        else:
-            sprite.frame = 0
+        if sprite.animation == 'default':
+            sprite.playing = false
+            if move_vec.x >= 0:
+                sprite.flip_h = true
+            elif move_vec.x < 0:
+                sprite.flip_h = false
+            if move_vec.y < -MOVE_TOLERANCE:
+                sprite.frame = 2
+            elif move_vec.y > MOVE_TOLERANCE:
+                sprite.frame = 3
+            elif abs(move_vec.x) > MOVE_TOLERANCE:
+                sprite.frame = 1
+            else:
+                sprite.frame = 0
         
         move_vec = lerp(move_vec, get_input_dir() * SPEED, 0.1)
         move_vec = move_and_slide(move_vec)
@@ -88,3 +87,15 @@ func _input(event):
     if event.is_action_pressed("place"):
         if holding:
             _release_block()
+            sprite.animation = "jazz"
+            sprite.frame = 0
+            sprite.playing = true
+            sprite.connect("animation_finished", self,
+                    "_on_sprite_animation_finished", [],
+                    CONNECT_ONESHOT)
+
+func _on_sprite_animation_finished():
+    sprite.animation = "default"
+    sprite.playing = false
+    sprite.frame = 0
+    

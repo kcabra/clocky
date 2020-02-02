@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://player/FSM_run.gd" type="Script" id=1]
 [ext_resource path="res://player/Player_run.gd" type="Script" id=2]
 [ext_resource path="res://player/assets/jump2.png" type="Texture" id=3]
 [ext_resource path="res://player/assets/jump1.png" type="Texture" id=4]
-[ext_resource path="res://player/assets/stand.png" type="Texture" id=5]
+[ext_resource path="res://player/assets/stand2.png" type="Texture" id=5]
 [ext_resource path="res://player/assets/jump4.png" type="Texture" id=6]
 [ext_resource path="res://player/assets/jump7.png" type="Texture" id=7]
 [ext_resource path="res://player/assets/walk2.png" type="Texture" id=8]
@@ -21,20 +21,28 @@
 [ext_resource path="res://player/assets/warp1.png" type="Texture" id=19]
 [ext_resource path="res://player/assets/warp6.png" type="Texture" id=20]
 [ext_resource path="res://player/assets/warp5.png" type="Texture" id=21]
+[ext_resource path="res://player/assets/stand4.png" type="Texture" id=22]
+[ext_resource path="res://player/assets/stand1.png" type="Texture" id=23]
+[ext_resource path="res://player/assets/stand3.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53.27, 129.92 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "born",
-"speed": 5.0
+"name": "stand",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "fall",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 6 ) ],
@@ -42,20 +50,15 @@ animations = [ {
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "fall",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "die",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "born",
+"speed": 5.0
 } ]
 
 [node name="player_run" type="KinematicBody2D"]
@@ -89,6 +92,6 @@ collision_mask = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "born"
-frame = 5
+animation = "stand"
+frame = 2
 playing = true
