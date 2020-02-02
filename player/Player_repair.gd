@@ -9,11 +9,21 @@ var block = true
 
 func _ready():
     randomize()
+    blockspawn_timer.connect("timeout", self, "_hold_block")
     sprite.animation = "born"
     sprite.frame = 0
     sprite.playing = true
     yield(sprite, "animation_finished")
     block = false
+    blockspawn_timer.start()
+
+func die():
+    halt()
+    block = true
+    sprite.animation = "die"
+    sprite.playing = true
+    yield(sprite, "animation_finished")
+    self.queue_free()
 
 func get_input_dir():
     var dir = Vector2.ZERO
@@ -26,6 +36,9 @@ func get_input_dir():
     if Input.is_action_pressed("move_down"):
         dir.y += 1
     return dir.normalized()
+
+func halt():
+    move_vec = Vector2.ZERO
 
 func _physics_process(delta):
     if !block:
@@ -54,19 +67,24 @@ var blocks = [
         preload("res://obj/player_plat_vert.tscn"),
         ]
 
+onready var blockspawn_timer = $Timer
+var holding = false
+
+func _hold_block():
+    holding = true
+    var node = blocks[randi() % blocks.size()].instance()
+    $Position2D.add_child(node)
+
+func _release_block():
+    holding = false
+    var node = $Position2D.get_child(0)
+    var pos = node.global_position
+    $Position2D.remove_child(node)
+    node.position = pos
+    get_parent().add_child(node)
+    blockspawn_timer.start()
+
 func _input(event):
     if event.is_action_pressed("place"):
-        var node = blocks[randi() % blocks.size()].instance()
-        node.position = self.position
-        get_parent().add_child(node)
-
-func halt():
-    move_vec = Vector2.ZERO
-
-func die():
-    halt()
-    block = true
-    sprite.animation = "die"
-    sprite.playing = true
-    yield(sprite, "animation_finished")
-    self.queue_free()
+        if holding:
+            _release_block()
