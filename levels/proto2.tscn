@@ -310,6 +310,11 @@ position = Vector2( 342, 600 )
 z_index = -1
 texture = ExtResource( 4 )
 
+[node name="spawn" type="Position2D" parent="tela3" groups=[
+"spawn",
+]]
+position = Vector2( 269, 572 )
+
 [node name="NewLevel" type="Area2D" parent="tela3"]
 visible = false
 position = Vector2( 640, 680 )
