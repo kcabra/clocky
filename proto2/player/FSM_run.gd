@@ -78,6 +78,7 @@ func _get_transition():
 func _enter_state(new_state, old_state): 
     match new_state:
         states.stand:
+            sprite.flip_h = false
             if jump_timer < 0:
                 sprite.animation = "stand"
                 sprite.frame = 0

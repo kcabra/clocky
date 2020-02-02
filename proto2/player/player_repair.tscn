@@ -20,6 +20,7 @@ animations = [ {
 [node name="player_repair" type="KinematicBody2D"]
 position = Vector2( 208.019, 198.976 )
 scale = Vector2( 0.298277, 0.298277 )
+z_index = 1
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

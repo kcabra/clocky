@@ -37,6 +37,12 @@ func _physics_process(delta):
     move_vec = lerp(move_vec, get_input_dir() * SPEED, 0.1)
     move_vec = move_and_slide(move_vec)
 
+var blocks = [
+        preload("res://proto2/obj/plat_oneway.tscn"),
+        ]
+
 func _input(event):
-    pass
-#    if event.is_action_pressed()
+    if event.is_action_pressed("place"):
+        var node = blocks[randi() % blocks.size()].instance()
+        node.position = self.position
+        get_parent().add_child(node)

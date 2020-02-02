@@ -29,7 +29,6 @@ extents = Vector2( 487, 3.99999 )
 [node name="proto2" type="Node2D"]
 position = Vector2( -2, 0 )
 script = ExtResource( 1 )
-current_mode = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -41,7 +40,7 @@ position = Vector2( 0, -360 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="Camera2D" type="Camera2D" parent="." groups=[
+[node name="Camera" type="Camera2D" parent="." groups=[
 "camera",
 ]]
 position = Vector2( 640, 360 )
@@ -161,6 +160,11 @@ position = Vector2( 1013, -203 )
 "spawn",
 ]]
 position = Vector2( 1016, -121 )
+
+[node name="spawn2" type="Position2D" parent="tela2" groups=[
+"spawn",
+]]
+position = Vector2( 857, -118 )
 
 [node name="NewLevel" type="Area2D" parent="tela2"]
 position = Vector2( 640, -7.39098e-06 )

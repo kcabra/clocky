@@ -45,6 +45,7 @@ animations = [ {
 [node name="player_run" type="KinematicBody2D"]
 position = Vector2( 208.019, 198.976 )
 scale = Vector2( 0.3, 0.3 )
+z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 1 )
@@ -61,12 +62,14 @@ script = ExtResource( 2 )
 position = Vector2( -53.3967, 146.747 )
 enabled = true
 cast_to = Vector2( 0, 5 )
+collision_mask = 3
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 position = Vector2( 53.27, 146.747 )
 scale = Vector2( 1.27817, 1.27817 )
 enabled = true
 cast_to = Vector2( 0, 5 )
+collision_mask = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
