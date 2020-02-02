@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/clocky.ogg-466514d6857b559d23d6567a9b99c5ee.oggstr"
+
+[deps]
+
+source_file="res://clocky.ogg"
+dest_files=[ "res://.import/clocky.ogg-466514d6857b559d23d6567a9b99c5ee.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
