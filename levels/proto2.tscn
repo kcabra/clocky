@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://levels/NewLevel.gd" type="Script" id=1]
 [ext_resource path="res://levels/Camera.gd" type="Script" id=2]
@@ -7,14 +7,16 @@
 [ext_resource path="res://holders/bg torre.png" type="Texture" id=5]
 [ext_resource path="res://holders/ph-parede2.png" type="Texture" id=6]
 [ext_resource path="res://obj/static_plat_default.tscn" type="PackedScene" id=7]
-[ext_resource path="res://holders/ph-bg-atmosferapng.png" type="Texture" id=8]
+[ext_resource path="res://holders/bg ceu2.png" type="Texture" id=8]
 [ext_resource path="res://holders/ph-chao.png" type="Texture" id=9]
 [ext_resource path="res://holders/ph-parede.png" type="Texture" id=10]
 [ext_resource path="res://holders/saída ponto B.png" type="Texture" id=11]
 [ext_resource path="res://holders/ponteiro final horas.png" type="Texture" id=12]
 [ext_resource path="res://holders/ponteiro final minutos.png" type="Texture" id=13]
-[ext_resource path="res://holders/relogio final.png" type="Texture" id=14]
+[ext_resource path="res://holders/relogio final2.png" type="Texture" id=14]
 [ext_resource path="res://clocky.ogg" type="AudioStream" id=15]
+[ext_resource path="res://holders/parede do final R.PNG" type="Texture" id=16]
+[ext_resource path="res://holders/parede do final L.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://holders/Architectural-TTF/Architectural.ttf"
@@ -84,10 +86,9 @@ position = Vector2( 212, -705 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0, -360 )
+position = Vector2( 0, -1488 )
 texture = ExtResource( 8 )
 centered = false
 
@@ -136,28 +137,21 @@ texture = ExtResource( 6 )
 flip_v = true
 
 [node name="left3" type="CollisionShape2D" parent="parede"]
-position = Vector2( 107, -942 )
+position = Vector2( 107, -986 )
 shape = SubResource( 3 )
 
 [node name="ph-parede" type="Sprite" parent="parede/left3"]
 z_index = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 17 )
 
 [node name="right3" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -942 )
 shape = SubResource( 4 )
 
 [node name="ph-parede2" type="Sprite" parent="parede/right3"]
+position = Vector2( 0, -42 )
 z_index = 1
-texture = ExtResource( 6 )
-
-[node name="left4" type="CollisionShape2D" parent="parede"]
-position = Vector2( 107, -1570 )
-shape = SubResource( 3 )
-
-[node name="right4" type="CollisionShape2D" parent="parede"]
-position = Vector2( 1173, -1570 )
-shape = SubResource( 4 )
+texture = ExtResource( 16 )
 
 [node name="tela1" type="Node2D" parent="."]
 
@@ -197,7 +191,7 @@ position = Vector2( 544, 407 )
 position = Vector2( 780, 290 )
 
 [node name="saída ponto B" type="Sprite" parent="tela1"]
-position = Vector2( 1012, 42 )
+position = Vector2( 1011, 42 )
 z_index = -1
 texture = ExtResource( 11 )
 
@@ -266,7 +260,7 @@ position = Vector2( 0, -101 )
 shape = SubResource( 7 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela2"]
-position = Vector2( 1008, 600 )
+position = Vector2( 1013, 600 )
 z_index = -1
 texture = ExtResource( 4 )
 
@@ -307,7 +301,7 @@ shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="saída ponto B2" type="Sprite" parent="tela3"]
-position = Vector2( 347, 727 )
+position = Vector2( 343, 727 )
 z_index = -1
 texture = ExtResource( 11 )
 

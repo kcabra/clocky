@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mocup2-01.jpg-b731b49f8d0c19623bef8def9ee01a6c.stex"
+path="res://.import/relogio final2.png-50007f08172a204beaf540942047c35b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mocup2-01.jpg"
-dest_files=[ "res://.import/mocup2-01.jpg-b731b49f8d0c19623bef8def9ee01a6c.stex" ]
+source_file="res://holders/relogio final2.png"
+dest_files=[ "res://.import/relogio final2.png-50007f08172a204beaf540942047c35b.stex" ]
 
 [params]
 
