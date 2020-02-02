@@ -30,20 +30,20 @@ func _on_level_changed():
     current_level += 1
 
 func switch_mode():
-    if player: player.queue_free()
+    if player: player.die()
     godmode = !godmode
     if godmode:
+        $Modulator.play("modulate")
         get_tree().call_group("placed", "queue_free")
         player = player_repair.instance()
         get_tree().set_group("level_transition", "one_way_collision", false)
     else:
+        $Modulator.play_backwards("modulate")
         player = player_run.instance()
         get_tree().set_group("level_transition", "one_way_collision", true)
     # assumes there's only one spawn active, must remove
     # old spawn before adding a new one.
     var spawn_array = get_tree().get_nodes_in_group("spawn")
-    for i in range(spawn_array.size()):
-        print_debug(String(i)+": "+String(spawn_array[i].global_position))
     player.position = spawn_array[current_level - 1].global_position
     add_child(player)
     timer.start()

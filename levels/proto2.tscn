@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://levels/NewLevel.gd" type="Script" id=1]
 [ext_resource path="res://levels/Camera.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://holders/ponteiro final horas.png" type="Texture" id=12]
 [ext_resource path="res://holders/ponteiro final minutos.png" type="Texture" id=13]
 [ext_resource path="res://holders/relogio final.png" type="Texture" id=14]
+[ext_resource path="res://clocky.ogg" type="AudioStream" id=15]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://holders/Architectural-TTF/Architectural.ttf"
@@ -21,6 +22,21 @@ font_path = "res://holders/Architectural-TTF/Architectural.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 100
 font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "modulate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Modulator/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.176471, 0.788235, 0.909804, 0.964706 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 46, 314 )
@@ -36,23 +52,6 @@ extents = Vector2( 488, 22 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 487, 3.99999 )
-
-[sub_resource type="Animation" id=8]
-resource_name = "modulate"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0814934, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0.294118, 0.8, 0.396078, 1 ), Color( 1, 1, 1, 1 ), Color( 1.5, 1.5, 1.5, 1 ) ]
-}
 
 [node name="proto2" type="Node2D"]
 position = Vector2( -2, 0 )
@@ -73,8 +72,14 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 10.0
 one_shot = true
+
+[node name="Modulator" type="AnimationPlayer" parent="."]
+anims/modulate = SubResource( 8 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Modulator"]
+position = Vector2( 212, -705 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -322,10 +327,5 @@ script = ExtResource( 1 )
 position = Vector2( 0, -101 )
 shape = SubResource( 7 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/modulate = SubResource( 8 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="AnimationPlayer"]
-visible = false
-position = Vector2( 212, -705 )
-color = Color( 0.176471, 0.788235, 0.909804, 0.964706 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )

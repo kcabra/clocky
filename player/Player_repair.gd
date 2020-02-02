@@ -10,6 +10,7 @@ var block = true
 func _ready():
     randomize()
     sprite.animation = "born"
+    sprite.frame = 0
     sprite.playing = true
     yield(sprite, "animation_finished")
     block = false
@@ -28,16 +29,12 @@ func get_input_dir():
 
 func _physics_process(delta):
     if !block:
-        if sprite.frame != 0:
-            print_debug("pre")
         sprite.animation = "default"
-        if move_vec.x > 0:
+        sprite.playing = false
+        if move_vec.x >= 0:
             sprite.flip_h = true
         elif move_vec.x < 0:
             sprite.flip_h = false
-        
-        if sprite.frame != 0:
-            print_debug("mid")
             
         if move_vec.y < -MOVE_TOLERANCE:
             sprite.frame = 2
@@ -48,8 +45,6 @@ func _physics_process(delta):
         else:
             sprite.frame = 0
         
-        if sprite.frame != 0:
-            print_debug("post")
         move_vec = lerp(move_vec, get_input_dir() * SPEED, 0.1)
         move_vec = move_and_slide(move_vec)
 
@@ -65,8 +60,13 @@ func _input(event):
         node.position = self.position
         get_parent().add_child(node)
 
+func halt():
+    move_vec = Vector2.ZERO
+
 func die():
+    halt()
     block = true
     sprite.animation = "die"
     sprite.playing = true
-    
+    yield(sprite, "animation_finished")
+    self.queue_free()

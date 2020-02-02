@@ -109,8 +109,10 @@ func _get_input_dir():
     return dir
 
 func die():
+    state = states.die
+    parent.halt()
     sprite.animation = "die"
     sprite.frame = 0
     sprite.playing = true
     yield(sprite, "animation_finished")
-    self.queue_free()
+    parent.queue_free()
