@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/assets/godmode3.png" type="Texture" id=1]
 [ext_resource path="res://player/Player_repair.gd" type="Script" id=2]
@@ -14,7 +14,25 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.0447, 24.6461 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.542969, 0.0296936, 0.258261, 1, 0.466717, 0.0740509, 0.824219, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 0.7
+angular_velocity = 60.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 5.0
+color_ramp = SubResource( 3 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ) ],
 "loop": true,
@@ -42,9 +60,16 @@ modulate = Color( 0.941176, 0.00392157, 0.996078, 1 )
 position = Vector2( -0.0637207, -6.976 )
 shape = SubResource( 1 )
 
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 50
+lifetime = 1.5
+visibility_rect = Rect2( -200, -200, 400, 400 )
+local_coords = false
+process_material = SubResource( 4 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.258785, 0.258785 )
-frames = SubResource( 2 )
+frames = SubResource( 5 )
 animation = "born"
 frame = 4
 playing = true
