@@ -28,6 +28,8 @@ func _on_level_timeout():
 
 func _on_level_changed():
     current_level += 1
+    if current_level == 7:
+        start_game_ending()
 
 func switch_mode():
     if player: player.die()
@@ -52,3 +54,8 @@ func _process(delta):
     $"UI/Label".text = String(floor(timer.time_left))
     if Input.is_action_just_pressed("reset"):
         switch_mode()
+
+func start_game_ending():
+    timer.stop()
+    $UI/Label.visible = false
+    $Ending.play("ending")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://levels/NewLevel.gd" type="Script" id=1]
 [ext_resource path="res://levels/Camera.gd" type="Script" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://clocky.ogg" type="AudioStream" id=15]
 [ext_resource path="res://holders/parede do final R.PNG" type="Texture" id=16]
 [ext_resource path="res://holders/parede do final L.png" type="Texture" id=17]
+
+[sub_resource type="Animation" id=9]
+resource_name = "ending"
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://holders/Architectural-TTF/Architectural.ttf"
@@ -58,6 +61,9 @@ extents = Vector2( 487, 3.99999 )
 [node name="proto2" type="Node2D"]
 position = Vector2( -2, 0 )
 script = ExtResource( 3 )
+
+[node name="Ending" type="AnimationPlayer" parent="."]
+anims/ending = SubResource( 9 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -262,6 +268,23 @@ __meta__ = {
 z_index = 1
 texture = ExtResource( 6 )
 flip_v = true
+
+[node name="left8" type="CollisionShape2D" parent="parede"]
+position = Vector2( 107, -3738.14 )
+shape = SubResource( 4 )
+
+[node name="ph-parede" type="Sprite" parent="parede/left8"]
+z_index = 1
+texture = ExtResource( 17 )
+
+[node name="right8" type="CollisionShape2D" parent="parede"]
+position = Vector2( 1173, -3694.14 )
+shape = SubResource( 5 )
+
+[node name="ph-parede2" type="Sprite" parent="parede/right8"]
+position = Vector2( 0, -42 )
+z_index = 1
+texture = ExtResource( 16 )
 
 [node name="tela1" type="Node2D" parent="."]
 
@@ -680,7 +703,7 @@ centered = false
 
 [node name="ponteiro final horas" type="Sprite" parent="relog/bg"]
 position = Vector2( 589.519, 297.487 )
-rotation = -0.0637669
+rotation = -0.0325227
 texture = ExtResource( 12 )
 offset = Vector2( 24.9125, -103.625 )
 
@@ -726,22 +749,6 @@ script = ExtResource( 1 )
 position = Vector2( 0, -101 )
 shape = SubResource( 8 )
 
-[node name="left3" type="CollisionShape2D" parent="relog"]
-position = Vector2( 107, 371 )
-shape = SubResource( 4 )
-
-[node name="ph-parede" type="Sprite" parent="relog/left3"]
-z_index = 1
-texture = ExtResource( 17 )
-
-[node name="right3" type="CollisionShape2D" parent="relog"]
-position = Vector2( 1173, 415 )
-shape = SubResource( 5 )
-
-[node name="ph-parede2" type="Sprite" parent="relog/right3"]
-position = Vector2( 0, -42 )
-z_index = 1
-texture = ExtResource( 16 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+autoplay = true

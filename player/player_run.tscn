@@ -93,5 +93,4 @@ collision_mask = 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "stand"
-frame = 2
 playing = true

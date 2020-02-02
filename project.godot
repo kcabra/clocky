@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="clocky-tower"
-run/main_scene="res://levels/proto2.tscn"
+run/main_scene="res://holders/menu/main menu loop the loop.tscn"
 config/icon="res://icon.png"
 
 [display]

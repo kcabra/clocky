@@ -83,7 +83,7 @@ process_material = SubResource( 4 )
 scale = Vector2( 0.258785, 0.258785 )
 frames = SubResource( 5 )
 animation = "jazz"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Position2D" type="Position2D" parent="."]
