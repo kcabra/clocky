@@ -68,10 +68,9 @@ z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
-BLOCK_SIZE = 45
-jump_duration = 0.4
-jump_height = 3
-jump_min_height = 2
+jump_duration = 0.28
+jump_height = 0.9
+jump_min_height = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.941176, 0.00392157, 0.996078, 1 )

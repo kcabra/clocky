@@ -5,7 +5,7 @@ extends KinematicBody2D
 export var BLOCK_SIZE = 90
 export var MAX_GRAV = 500
 export var SPEED = 200
-export var jump_duration = 0.7
+export var jump_duration = 0.3
 export var jump_height = 1.5
 export var jump_min_height = 1.0
 var move_vec = Vector2.ZERO

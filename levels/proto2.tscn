@@ -277,8 +277,6 @@ smoothing_enabled = true
 script = ExtResource( 2 )
 
 [node name="parede" type="StaticBody2D" parent="."]
-z_index = 1
-z_as_relative = false
 
 [node name="left" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, 314 )
@@ -370,7 +368,6 @@ texture = ExtResource( 6 )
 
 [node name="left2" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -314 )
-z_index = 1
 shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -472,8 +469,6 @@ position = Vector2( 250, 549 )
 
 [node name="chao" type="StaticBody2D" parent="tela1"]
 position = Vector2( 640, 674 )
-z_index = 1
-z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="tela1/chao"]
 texture = ExtResource( 9 )
@@ -486,7 +481,7 @@ shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela1" instance=ExtResource( 7 )]
-position = Vector2( 213, 598 )
+position = Vector2( 282, 607 )
 
 [node name="plat_static2" parent="tela1" instance=ExtResource( 7 )]
 position = Vector2( 1013, 186 )
@@ -513,8 +508,6 @@ centered = false
 
 [node name="chao" type="StaticBody2D" parent="tela2"]
 position = Vector2( 640, 662 )
-z_index = 1
-z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="tela2/chao"]
 scale = Vector2( 0.839999, 1 )
