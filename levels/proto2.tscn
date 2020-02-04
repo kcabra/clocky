@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://levels/NewLevel.gd" type="Script" id=1]
 [ext_resource path="res://levels/Camera.gd" type="Script" id=2]
@@ -17,19 +17,160 @@
 [ext_resource path="res://clocky.ogg" type="AudioStream" id=15]
 [ext_resource path="res://holders/parede do final R.PNG" type="Texture" id=16]
 [ext_resource path="res://holders/parede do final L.png" type="Texture" id=17]
+[ext_resource path="res://holders/Clock_Strikes_Twelve-Clock_Man-1976178740.ogg" type="AudioStream" id=18]
+[ext_resource path="res://holders/black.png" type="Texture" id=19]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=1]
 resource_name = "ending"
+length = 12.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Modulator/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.25, 0.55, 0.7, 1.2, 1.55, 2.5, 2.6, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0666667, 0.2, 0.596078, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.219608, 0.964706, 1, 1 ), Color( 0.219608, 0.964706, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.97, 0.4656, 0.953187, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("relog/bg/ponteiro final horas:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.45, 1.95, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -1.86341, 154.194, -684.275, -724.207, -734.14 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("relog/bg/ponteiro final minutos:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5, 1.7, 1.9, 2.15, 2.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -138.636, -227.818, -206.654, -174.249, -174.249, -132.248, -132.248, -36.7201 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ending/Particles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ending/Particles2D2:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Ending/Sprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 8.65, 12.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Ending/AudioStreamPlayer:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Ending/AudioStreamPlayer:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.05, 8.45, 12.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -40.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -40.0 ]
+}
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.81463, 0.092926, 0.820312, 1, 0.0638123, 0.960938, 0.624516, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 5.0
+orbit_velocity = 0.1
+orbit_velocity_random = 0.0
+scale = 0.3
+color_ramp = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 10, 0 )
+initial_velocity = 10.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 2.0
+scale = 0.3
+
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://holders/Architectural-TTF/Architectural.ttf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=7]
 size = 100
-font_data = SubResource( 1 )
+font_data = SubResource( 6 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "modulate"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Modulator/CanvasModulate:color")
 tracks/0/interp = 1
@@ -43,19 +184,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.176471, 0.788235, 0.909804, 0.964706 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 46, 314 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 46, 314 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 639, 45 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 488, 22 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 487, 3.99999 )
 
 [node name="proto2" type="Node2D"]
@@ -63,7 +204,35 @@ position = Vector2( -2, 0 )
 script = ExtResource( 3 )
 
 [node name="Ending" type="AnimationPlayer" parent="."]
-anims/ending = SubResource( 9 )
+anims/ending = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Ending"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 651, -3824 )
+z_index = 5
+texture = ExtResource( 19 )
+region_enabled = true
+region_rect = Rect2( 0, -705.606, 1959.79, 1200.46 )
+
+[node name="Particles2D" type="Particles2D" parent="Ending"]
+position = Vector2( 650, -3829 )
+scale = Vector2( 12.92, 12.92 )
+emitting = false
+amount = 1100
+lifetime = 3.0
+process_material = SubResource( 4 )
+
+[node name="Particles2D2" type="Particles2D" parent="Ending"]
+position = Vector2( 650, -3829 )
+scale = Vector2( 12.92, 12.92 )
+emitting = false
+amount = 1100
+lifetime = 3.0
+explosiveness = 1.0
+process_material = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ending"]
+stream = ExtResource( 18 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -72,7 +241,7 @@ margin_left = 617.0
 margin_top = 14.0
 margin_right = 663.0
 margin_bottom = 114.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "18"
 align = 1
 __meta__ = {
@@ -84,7 +253,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="Modulator" type="AnimationPlayer" parent="."]
-anims/modulate = SubResource( 3 )
+anims/modulate = SubResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Modulator"]
 position = Vector2( 212, -705 )
@@ -108,10 +277,12 @@ smoothing_enabled = true
 script = ExtResource( 2 )
 
 [node name="parede" type="StaticBody2D" parent="."]
+z_index = 1
+z_as_relative = false
 
 [node name="left" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, 314 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -122,7 +293,7 @@ texture = ExtResource( 10 )
 
 [node name="right" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, 314 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -133,7 +304,7 @@ texture = ExtResource( 6 )
 
 [node name="left3" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -942 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -144,7 +315,7 @@ texture = ExtResource( 10 )
 
 [node name="right3" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -942 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -155,7 +326,7 @@ texture = ExtResource( 6 )
 
 [node name="left5" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -2198.56 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -166,7 +337,7 @@ texture = ExtResource( 10 )
 
 [node name="right5" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -2198.56 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -177,7 +348,7 @@ texture = ExtResource( 6 )
 
 [node name="left7" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -3453.6 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -188,7 +359,7 @@ texture = ExtResource( 10 )
 
 [node name="right7" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -3453.6 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -199,7 +370,8 @@ texture = ExtResource( 6 )
 
 [node name="left2" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -314 )
-shape = SubResource( 4 )
+z_index = 1
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -211,7 +383,7 @@ flip_v = true
 
 [node name="right2" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -314 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -223,7 +395,7 @@ flip_v = true
 
 [node name="left4" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -1570.32 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -235,7 +407,7 @@ flip_v = true
 
 [node name="right4" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -1570.32 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -247,7 +419,7 @@ flip_v = true
 
 [node name="left6" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -2826.41 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -259,7 +431,7 @@ flip_v = true
 
 [node name="right6" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -2826.41 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -271,7 +443,7 @@ flip_v = true
 
 [node name="left8" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -3738.14 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 
 [node name="ph-parede" type="Sprite" parent="parede/left8"]
 z_index = 1
@@ -279,7 +451,7 @@ texture = ExtResource( 17 )
 
 [node name="right8" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -3694.14 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 
 [node name="ph-parede2" type="Sprite" parent="parede/right8"]
 position = Vector2( 0, -42 )
@@ -300,6 +472,8 @@ position = Vector2( 250, 549 )
 
 [node name="chao" type="StaticBody2D" parent="tela1"]
 position = Vector2( 640, 674 )
+z_index = 1
+z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="tela1/chao"]
 texture = ExtResource( 9 )
@@ -308,11 +482,11 @@ texture = ExtResource( 9 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 6 )
+shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela1" instance=ExtResource( 7 )]
-position = Vector2( 282, 490 )
+position = Vector2( 213, 598 )
 
 [node name="plat_static2" parent="tela1" instance=ExtResource( 7 )]
 position = Vector2( 1013, 186 )
@@ -339,6 +513,8 @@ centered = false
 
 [node name="chao" type="StaticBody2D" parent="tela2"]
 position = Vector2( 640, 662 )
+z_index = 1
+z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="tela2/chao"]
 scale = Vector2( 0.839999, 1 )
@@ -350,7 +526,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela2" instance=ExtResource( 7 )]
@@ -391,7 +567,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela2/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela2"]
 position = Vector2( 1013, 600 )
@@ -424,7 +600,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela3" instance=ExtResource( 7 )]
@@ -456,7 +632,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela3/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela3"]
 position = Vector2( 408.938, 599.302 )
@@ -490,7 +666,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="plat_static2" parent="tela4" instance=ExtResource( 7 )]
@@ -531,7 +707,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela4/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela4"]
 position = Vector2( 1013, 600 )
@@ -564,7 +740,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="plat_static6" parent="tela5" instance=ExtResource( 7 )]
@@ -620,7 +796,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela5/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela5"]
 position = Vector2( 408.938, 599.302 )
@@ -654,7 +830,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="plat_static10" parent="tela6" instance=ExtResource( 7 )]
@@ -680,7 +856,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela6/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela6"]
 position = Vector2( 1013, 600 )
@@ -703,13 +879,13 @@ centered = false
 
 [node name="ponteiro final horas" type="Sprite" parent="relog/bg"]
 position = Vector2( 589.519, 297.487 )
-rotation = -0.0325227
+rotation = -0.0325226
 texture = ExtResource( 12 )
 offset = Vector2( 24.9125, -103.625 )
 
 [node name="ponteiro final minutos" type="Sprite" parent="relog/bg"]
 position = Vector2( 590, 297 )
-rotation = -2.41966
+rotation = -2.41965
 texture = ExtResource( 13 )
 offset = Vector2( 48, -53 )
 
@@ -725,7 +901,7 @@ region_rect = Rect2( 0, 0, 1279.51, 43.6037 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="relog/chao1"]
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="chegada ponto A2" type="Sprite" parent="relog"]
@@ -747,7 +923,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="relog/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )

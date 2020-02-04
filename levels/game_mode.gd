@@ -58,4 +58,7 @@ func _process(delta):
 func start_game_ending():
     timer.stop()
     $UI/Label.visible = false
+    yield(get_tree().create_timer(3.0), "timeout")
     $Ending.play("ending")
+    yield($Ending, "animation_finished")
+    get_tree().change_scene("res://holders/menu/main menu loop the loop.tscn")
