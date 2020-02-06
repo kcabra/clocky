@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://levels/NewLevel.gd" type="Script" id=1]
 [ext_resource path="res://levels/Camera.gd" type="Script" id=2]
@@ -20,126 +20,113 @@
 [ext_resource path="res://holders/Clock_Strikes_Twelve-Clock_Man-1976178740.ogg" type="AudioStream" id=18]
 [ext_resource path="res://holders/black.png" type="Texture" id=19]
 
-[sub_resource type="Animation" id=1]
-resource_name = "ending"
+[sub_resource type="Animation" id=3]
 length = 12.5
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Modulator/CanvasModulate:color")
+tracks/0/path = NodePath("relog/bg/ponteiro final horas:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.25, 0.55, 0.7, 1.2, 1.55, 2.5, 2.6, 2.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.0666667, 0.2, 0.596078, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.219608, 0.964706, 1, 1 ), Color( 0.219608, 0.964706, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.97, 0.4656, 0.953187, 1 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("relog/bg/ponteiro final horas:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 0.7, 1.45, 1.95, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -1.86341, 154.194, -684.275, -724.207, -734.14 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("relog/bg/ponteiro final minutos:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("relog/bg/ponteiro final minutos:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 0.7, 1.5, 1.7, 1.9, 2.15, 2.4, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -138.636, -227.818, -206.654, -174.249, -174.249, -132.248, -132.248, -36.7201 ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Ending/Particles2D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ending/Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 2.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Ending/Particles2D2:emitting")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ending/Particles2D2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 2.6, 2.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Ending/Sprite:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ending/Sprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0, 8.65, 12.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Ending/AudioStreamPlayer:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("Ending/AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0, 1.15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("Ending/AudioStreamPlayer:volume_db")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/path = NodePath("Ending/AudioStreamPlayer:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 1.05, 8.45, 12.35 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -40.0 ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -40.0 ]
 }
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=4]
 colors = PoolColorArray( 0.81463, 0.092926, 0.820312, 1, 0.0638123, 0.960938, 0.624516, 1 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 1
 emission_sphere_radius = 20.0
 flag_disable_z = true
@@ -149,9 +136,9 @@ initial_velocity = 5.0
 orbit_velocity = 0.1
 orbit_velocity_random = 0.0
 scale = 0.3
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=7]
 emission_shape = 1
 emission_sphere_radius = 20.0
 flag_disable_z = true
@@ -163,16 +150,16 @@ orbit_velocity_random = 0.0
 damping = 2.0
 scale = 0.3
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://holders/Architectural-TTF/Architectural.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 100
-font_data = SubResource( 6 )
+font_data = SubResource( 8 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
-tracks/0/path = NodePath("Modulator/CanvasModulate:color")
+tracks/0/path = NodePath("Modulator/Sprite:material:shader_param/depth")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -181,22 +168,66 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.176471, 0.788235, 0.909804, 0.964706 ) ]
+"values": [ 0.0, 0.005 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Modulator/Sprite:material:shader_param/intensity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 46, 314 )
+[sub_resource type="Shader" id=16]
+code = "shader_type canvas_item;
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 46, 314 )
+uniform vec4 color : hint_color = vec4(1.0);
+uniform float intensity = 1.0;
+uniform float frequency = 60;
+uniform float depth = 0.005;
+uniform float speed = 3;
+uniform float scale = 3;
+
+void fragment() {
+	
+	vec2 uv = SCREEN_UV;
+	uv.x += sin((uv.y * (1.0/scale)) * frequency + (TIME*speed)) * depth;
+	uv.x = clamp(uv.x, 0.0, 1.0);
+	vec3 c = textureLod(SCREEN_TEXTURE, uv, 0.0).rgb;
+	c.r *= 1.0 + (color.r * intensity);
+	c.g *= 1.0 + (color.g * intensity);
+	c.b *= 1.0 + (color.b * intensity);
+	COLOR.rgb = c;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
+shader_param/color = Color( 0.352941, 0.0392157, 0.698039, 1 )
+shader_param/intensity = 1.0
+shader_param/frequency = 60.0
+shader_param/depth = 0.0
+shader_param/speed = 1.2
+shader_param/scale = 5.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 639, 45 )
+extents = Vector2( 46, 314 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 488, 22 )
+extents = Vector2( 46, 314 )
 
 [sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 639, 45 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 488, 22 )
+
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 487, 3.99999 )
 
 [node name="proto2" type="Node2D"]
@@ -204,7 +235,7 @@ position = Vector2( -2, 0 )
 script = ExtResource( 3 )
 
 [node name="Ending" type="AnimationPlayer" parent="."]
-anims/ending = SubResource( 1 )
+anims/ending = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Ending"]
 modulate = Color( 1, 1, 1, 0 )
@@ -220,7 +251,7 @@ scale = Vector2( 12.92, 12.92 )
 emitting = false
 amount = 1100
 lifetime = 3.0
-process_material = SubResource( 4 )
+process_material = SubResource( 6 )
 
 [node name="Particles2D2" type="Particles2D" parent="Ending"]
 position = Vector2( 650, -3829 )
@@ -229,7 +260,7 @@ emitting = false
 amount = 1100
 lifetime = 3.0
 explosiveness = 1.0
-process_material = SubResource( 5 )
+process_material = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ending"]
 stream = ExtResource( 18 )
@@ -241,22 +272,27 @@ margin_left = 617.0
 margin_top = 14.0
 margin_right = 663.0
 margin_bottom = 114.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "18"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Modulator" type="AnimationPlayer" parent="UI"]
+anims/modulate = SubResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="UI/Modulator"]
+material = SubResource( 17 )
+z_index = 10
+texture = ExtResource( 19 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1280, 720 )
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
-
-[node name="Modulator" type="AnimationPlayer" parent="."]
-anims/modulate = SubResource( 8 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Modulator"]
-position = Vector2( 212, -705 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -280,7 +316,7 @@ script = ExtResource( 2 )
 
 [node name="left" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, 314 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -291,7 +327,7 @@ texture = ExtResource( 10 )
 
 [node name="right" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, 314 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -302,7 +338,7 @@ texture = ExtResource( 6 )
 
 [node name="left3" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -942 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -313,7 +349,7 @@ texture = ExtResource( 10 )
 
 [node name="right3" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -942 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -324,7 +360,7 @@ texture = ExtResource( 6 )
 
 [node name="left5" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -2198.56 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -335,7 +371,7 @@ texture = ExtResource( 10 )
 
 [node name="right5" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -2198.56 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -346,7 +382,7 @@ texture = ExtResource( 6 )
 
 [node name="left7" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -3453.6 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -357,7 +393,7 @@ texture = ExtResource( 10 )
 
 [node name="right7" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -3453.6 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -368,7 +404,7 @@ texture = ExtResource( 6 )
 
 [node name="left2" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -314 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -380,7 +416,7 @@ flip_v = true
 
 [node name="right2" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -314 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -392,7 +428,7 @@ flip_v = true
 
 [node name="left4" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -1570.32 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -404,7 +440,7 @@ flip_v = true
 
 [node name="right4" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -1570.32 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -416,7 +452,7 @@ flip_v = true
 
 [node name="left6" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -2826.41 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -428,7 +464,7 @@ flip_v = true
 
 [node name="right6" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -2826.41 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -440,7 +476,7 @@ flip_v = true
 
 [node name="left8" type="CollisionShape2D" parent="parede"]
 position = Vector2( 107, -3738.14 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="ph-parede" type="Sprite" parent="parede/left8"]
 z_index = 1
@@ -448,7 +484,7 @@ texture = ExtResource( 17 )
 
 [node name="right8" type="CollisionShape2D" parent="parede"]
 position = Vector2( 1173, -3694.14 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 
 [node name="ph-parede2" type="Sprite" parent="parede/right8"]
 position = Vector2( 0, -42 )
@@ -477,7 +513,7 @@ texture = ExtResource( 9 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela1" instance=ExtResource( 7 )]
@@ -519,7 +555,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela2" instance=ExtResource( 7 )]
@@ -560,7 +596,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela2/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela2"]
 position = Vector2( 1013, 600 )
@@ -593,7 +629,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="plat_static" parent="tela3" instance=ExtResource( 7 )]
@@ -625,7 +661,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela3/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela3"]
 position = Vector2( 408.938, 599.302 )
@@ -659,7 +695,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="plat_static2" parent="tela4" instance=ExtResource( 7 )]
@@ -700,7 +736,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela4/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela4"]
 position = Vector2( 1013, 600 )
@@ -733,7 +769,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="plat_static6" parent="tela5" instance=ExtResource( 7 )]
@@ -789,7 +825,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela5/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela5"]
 position = Vector2( 408.938, 599.302 )
@@ -823,7 +859,7 @@ region_rect = Rect2( 0, 0, 1280, 43.6037 )
 "level_transition",
 ]]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="plat_static10" parent="tela6" instance=ExtResource( 7 )]
@@ -849,7 +885,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tela6/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela6"]
 position = Vector2( 1013, 600 )
@@ -894,7 +930,7 @@ region_rect = Rect2( 0, 0, 1279.51, 43.6037 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="relog/chao1"]
 visible = false
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 one_way_collision = true
 
 [node name="chegada ponto A2" type="Sprite" parent="relog"]
@@ -916,7 +952,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="relog/NewLevel"]
 position = Vector2( 0, -101 )
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
