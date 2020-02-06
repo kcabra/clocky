@@ -31,6 +31,7 @@ func _on_level_changed():
 	if current_level == 7:
 		start_game_ending()
 
+var firstime = true
 func switch_mode():
 	if player: player.die()
 	godmode = !godmode
@@ -40,7 +41,7 @@ func switch_mode():
 		player = player_repair.instance()
 		get_tree().set_group("level_transition", "one_way_collision", false)
 	else:
-		$"UI/Modulator".play_backwards("modulate")
+		if not firstime: $"UI/Modulator".play_backwards("modulate")
 		player = player_run.instance()
 		get_tree().set_group("level_transition", "one_way_collision", true)
 	# assumes there's only one spawn active, must remove
@@ -49,9 +50,10 @@ func switch_mode():
 	player.position = spawn_array[current_level - 1].global_position
 	add_child(player)
 	timer.start()
+	firstime = false
 
 func _process(delta):
-	$"UI/Label".text = String(floor(timer.time_left))
+	$"UI/Label".text = String(ceil(timer.time_left))
 	if Input.is_action_just_pressed("reset"):
 		switch_mode()
 

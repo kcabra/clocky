@@ -209,7 +209,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=17]
 shader = SubResource( 16 )
 shader_param/color = Color( 0.352941, 0.0392157, 0.698039, 1 )
-shader_param/intensity = 1.0
+shader_param/intensity = 0.0
 shader_param/frequency = 60.0
 shader_param/depth = 0.0
 shader_param/speed = 1.2
@@ -300,7 +300,8 @@ one_shot = true
 motion_scale = Vector2( 1, 0.2 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0, -1488 )
+position = Vector2( -60.3886, -1488 )
+scale = Vector2( 1.04718, 1.04718 )
 texture = ExtResource( 8 )
 centered = false
 
