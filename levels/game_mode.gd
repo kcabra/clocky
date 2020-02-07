@@ -28,7 +28,7 @@ func _on_level_timeout():
 
 func _on_level_changed():
 	current_level += 1
-	if current_level == 7:
+	if current_level == 9:
 		start_game_ending()
 
 var firstime = true
