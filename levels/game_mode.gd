@@ -22,8 +22,6 @@ func _ready():
 	switch_mode()
 
 func _on_level_timeout():
-	if !godmode:
-		get_tree().call_group("placed", "queue_free")
 	switch_mode()
 
 func _on_level_changed():
@@ -37,7 +35,7 @@ func switch_mode():
 	godmode = !godmode
 	if godmode:
 		$"UI/Modulator".play("modulate")
-		get_tree().call_group("placed", "queue_free")
+		get_tree().call_group("placed", "destroy")
 		player = player_repair.instance()
 		get_tree().set_group("level_transition", "one_way_collision", false)
 	else:
