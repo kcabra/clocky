@@ -14,7 +14,7 @@
 [ext_resource path="res://holders/ponteiro final horas.png" type="Texture" id=12]
 [ext_resource path="res://holders/ponteiro final minutos.png" type="Texture" id=13]
 [ext_resource path="res://holders/relogio final2.png" type="Texture" id=14]
-[ext_resource path="res://clocky.ogg" type="AudioStream" id=15]
+[ext_resource path="res://looooop.ogg" type="AudioStream" id=15]
 [ext_resource path="res://holders/parede do final R.PNG" type="Texture" id=16]
 [ext_resource path="res://holders/parede do final L.png" type="Texture" id=17]
 [ext_resource path="res://holders/Clock_Strikes_Twelve-Clock_Man-1976178740.ogg" type="AudioStream" id=18]
@@ -588,10 +588,10 @@ z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela2" type="Node2D" parent="."]
-position = Vector2( 0, -683 )
+position = Vector2( 0, -691.999 )
 
 [node name="bg" type="Sprite" parent="tela2"]
-position = Vector2( 1.10803, -1.86475 )
+position = Vector2( 0, -2.58472 )
 z_index = -2
 texture = ExtResource( 5 )
 centered = false
@@ -612,34 +612,22 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
-[node name="plat_static" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 235, 586 )
+[node name="plat_static13" parent="tela2" instance=ExtResource( 7 )]
+position = Vector2( 245.161, 534.203 )
 
-[node name="plat_static6" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 481, 453 )
+[node name="plat_static14" parent="tela2" instance=ExtResource( 7 )]
+position = Vector2( 485.854, 415.725 )
 
-[node name="plat_static3" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 921, 395 )
+[node name="plat_static15" parent="tela2" instance=ExtResource( 7 )]
+position = Vector2( 760.462, 316.948 )
 
-[node name="plat_static5" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 693, 396 )
-
-[node name="plat_static2" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 1049, 394 )
-
-[node name="plat_static10" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 491.346, 112.35 )
-
-[node name="plat_static9" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 375.346, 113.242 )
-
-[node name="plat_static8" parent="tela2" instance=ExtResource( 7 )]
-position = Vector2( 1047, 260 )
+[node name="plat_static16" parent="tela2" instance=ExtResource( 7 )]
+position = Vector2( 1017.99, 209.822 )
 
 [node name="spawn" type="Position2D" parent="tela2" groups=[
 "spawn",
 ]]
-position = Vector2( 1016, 559 )
+position = Vector2( 1021.34, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela2"]
 visible = false
@@ -653,17 +641,17 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela2"]
-position = Vector2( 1013, 600 )
+position = Vector2( 1014.21, 599.302 )
 z_index = -1
 texture = ExtResource( 4 )
 
 [node name="saída ponto B" type="Sprite" parent="tela2"]
-position = Vector2( 406.404, 50 )
+position = Vector2( 1004.8, 49.5427 )
 z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela3" type="Node2D" parent="."]
-position = Vector2( 0, -1367 )
+position = Vector2( 0, -1376.12 )
 
 [node name="bg" type="Sprite" parent="tela3"]
 z_index = -2
@@ -704,7 +692,7 @@ position = Vector2( 1026.46, 109.821 )
 [node name="spawn" type="Position2D" parent="tela3" groups=[
 "spawn",
 ]]
-position = Vector2( 412.636, 559 )
+position = Vector2( 1019.18, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela3"]
 visible = false
@@ -718,7 +706,7 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela3"]
-position = Vector2( 408.938, 599.302 )
+position = Vector2( 1009.86, 599.302 )
 z_index = -1
 texture = ExtResource( 4 )
 
@@ -728,10 +716,10 @@ z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela4" type="Node2D" parent="."]
-position = Vector2( 0, -2051.04 )
+position = Vector2( 1270.71, -2059.44 )
+scale = Vector2( -1, 1 )
 
 [node name="bg" type="Sprite" parent="tela4"]
-position = Vector2( 1.10803, -1.7511 )
 z_index = -2
 texture = ExtResource( 5 )
 centered = false
@@ -752,43 +740,49 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
-[node name="plat_static2" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 527.105, 356.342 )
+[node name="plat_static6" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 481, 465.892 )
 
-[node name="plat_static3" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 272.977, 357.395 )
-
-[node name="plat_static10" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 584.427, 136.989 )
-
-[node name="plat_static9" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 468.427, 137.934 )
-
-[node name="plat_static16" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 332.638, 137.934 )
-
-[node name="plat_static12" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 835.95, 136.989 )
-
-[node name="plat_static14" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 971.428, 136.989 )
-
-[node name="plat_static15" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 1107.6, 136.291 )
-
-[node name="plat_static11" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 719.95, 137.881 )
+[node name="plat_static7" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 619.041, 465.892 )
 
 [node name="plat_static8" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 704.618, 461.662 )
+position = Vector2( 757.081, 465.892 )
+
+[node name="plat_static9" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 1060.14, 467 )
+
+[node name="plat_static12" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 347.719, 465.892 )
 
 [node name="plat_static13" parent="tela4" instance=ExtResource( 7 )]
-position = Vector2( 840.906, 584.654 )
+position = Vector2( 212.852, 465.892 )
+
+[node name="plat_static10" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 579.54, 139.892 )
+
+[node name="plat_static14" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 332.447, 141 )
+
+[node name="plat_static15" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 197.269, 139.892 )
+
+[node name="plat_static16" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 842.144, 139.892 )
+
+[node name="plat_static17" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 977.324, 139.892 )
+
+[node name="plat_static18" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 1110.29, 139.892 )
+
+[node name="plat_static11" parent="tela4" instance=ExtResource( 7 )]
+position = Vector2( 710.454, 139.892 )
 
 [node name="spawn" type="Position2D" parent="tela4" groups=[
 "spawn",
 ]]
-position = Vector2( 1016, 559 )
+position = Vector2( 243.86, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela4"]
 visible = false
@@ -802,20 +796,23 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela4"]
-position = Vector2( 1013, 600 )
+position = Vector2( 258.018, 599.302 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 4 )
 
 [node name="saída ponto B" type="Sprite" parent="tela4"]
-position = Vector2( 406.404, 50 )
+position = Vector2( 1004.8, 49.5427 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela5" type="Node2D" parent="."]
-position = Vector2( 0, -2736.74 )
+position = Vector2( 1276.14, -2742.96 )
+scale = Vector2( -1, 1 )
 
 [node name="bg" type="Sprite" parent="tela5"]
-position = Vector2( 0, -2.58472 )
+position = Vector2( 1.10803, -1.7511 )
 z_index = -2
 texture = ExtResource( 5 )
 centered = false
@@ -836,22 +833,43 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
-[node name="plat_static13" parent="tela5" instance=ExtResource( 7 )]
-position = Vector2( 245.161, 534.203 )
+[node name="plat_static2" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 527.105, 356.342 )
 
-[node name="plat_static14" parent="tela5" instance=ExtResource( 7 )]
-position = Vector2( 485.854, 415.725 )
+[node name="plat_static3" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 272.977, 357.395 )
 
-[node name="plat_static15" parent="tela5" instance=ExtResource( 7 )]
-position = Vector2( 760.462, 316.948 )
+[node name="plat_static10" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 584.427, 136.989 )
+
+[node name="plat_static9" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 468.427, 137.934 )
 
 [node name="plat_static16" parent="tela5" instance=ExtResource( 7 )]
-position = Vector2( 1017.99, 209.822 )
+position = Vector2( 332.638, 137.934 )
+
+[node name="plat_static12" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 835.95, 136.989 )
+
+[node name="plat_static14" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 971.428, 136.989 )
+
+[node name="plat_static15" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 1107.6, 136.291 )
+
+[node name="plat_static11" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 719.95, 137.881 )
+
+[node name="plat_static8" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 704.618, 461.662 )
+
+[node name="plat_static13" parent="tela5" instance=ExtResource( 7 )]
+position = Vector2( 840.906, 584.654 )
 
 [node name="spawn" type="Position2D" parent="tela5" groups=[
 "spawn",
 ]]
-position = Vector2( 412.636, 559 )
+position = Vector2( 1016, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela5"]
 visible = false
@@ -865,17 +883,19 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela5"]
-position = Vector2( 408.938, 599.302 )
+position = Vector2( 1003, 598.64 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 4 )
 
 [node name="saída ponto B" type="Sprite" parent="tela5"]
-position = Vector2( 1004.8, 49.5427 )
+position = Vector2( 447.215, 50 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela6" type="Node2D" parent="."]
-position = Vector2( 0, -3420.04 )
+position = Vector2( 0, -3428.69 )
 
 [node name="bg" type="Sprite" parent="tela6"]
 position = Vector2( 1.10803, -0.698364 )
@@ -899,52 +919,19 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
+[node name="plat_static10" parent="tela6" instance=ExtResource( 7 )]
+position = Vector2( 527.002, 196.232 )
+
 [node name="plat_static9" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 504.895, 68.0717 )
-rotation = 4.71239
-
-[node name="plat_static11" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 504.895, 200.836 )
-rotation = 4.71239
-
-[node name="plat_static12" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 504.895, 469.623 )
-rotation = 4.71239
-
-[node name="plat_static16" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 790.344, 302.101 )
-rotation = 1.5708
-
-[node name="plat_static15" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 790.344, 438.123 )
-rotation = 1.5708
-
-[node name="plat_static14" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 790.343, 570.888 )
-rotation = 1.5708
+position = Vector2( 411.002, 199.072 )
 
 [node name="plat_static8" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 402.995, 133.852 )
-
-[node name="plat_static17" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 221.208, 315.639 )
-
-[node name="plat_static18" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 402.329, 505.427 )
-
-[node name="plat_static19" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 687.548, 505.427 )
-
-[node name="plat_static24" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 1058.06, 450.247 )
-
-[node name="plat_static23" parent="tela6" instance=ExtResource( 7 )]
-position = Vector2( 892.854, 266.487 )
+position = Vector2( 291.852, 199.5 )
 
 [node name="spawn" type="Position2D" parent="tela6" groups=[
 "spawn",
 ]]
-position = Vector2( 1016, 559 )
+position = Vector2( 861.288, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela6"]
 visible = false
@@ -958,7 +945,7 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela6"]
-position = Vector2( 1013, 600 )
+position = Vector2( 833.431, 600 )
 z_index = -1
 texture = ExtResource( 4 )
 
@@ -968,9 +955,11 @@ z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela7" type="Node2D" parent="."]
-position = Vector2( 0, -4104.95 )
+position = Vector2( 1267.75, -4107.88 )
+scale = Vector2( -1, 1 )
 
 [node name="bg" type="Sprite" parent="tela7"]
+position = Vector2( 1.10803, -1.86475 )
 z_index = -2
 texture = ExtResource( 5 )
 centered = false
@@ -991,49 +980,34 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
+[node name="plat_static" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 235, 586 )
+
 [node name="plat_static6" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 481, 467 )
+position = Vector2( 481, 453 )
 
-[node name="plat_static7" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 619.041, 467 )
+[node name="plat_static3" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 921, 395 )
 
-[node name="plat_static8" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 757.081, 467 )
+[node name="plat_static5" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 693, 396 )
 
-[node name="plat_static9" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 1060.14, 467 )
-
-[node name="plat_static12" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 347.719, 467 )
-
-[node name="plat_static13" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 212.852, 467 )
+[node name="plat_static2" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 1049, 394 )
 
 [node name="plat_static10" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 579.54, 141 )
+position = Vector2( 491.346, 112.35 )
 
-[node name="plat_static14" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 332.447, 142.108 )
+[node name="plat_static9" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 375.346, 113.242 )
 
-[node name="plat_static15" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 197.269, 141 )
-
-[node name="plat_static16" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 842.144, 141 )
-
-[node name="plat_static17" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 977.324, 141 )
-
-[node name="plat_static18" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 1110.29, 141 )
-
-[node name="plat_static11" parent="tela7" instance=ExtResource( 7 )]
-position = Vector2( 710.454, 141 )
+[node name="plat_static8" parent="tela7" instance=ExtResource( 7 )]
+position = Vector2( 1047, 260 )
 
 [node name="spawn" type="Position2D" parent="tela7" groups=[
 "spawn",
 ]]
-position = Vector2( 412.636, 559 )
+position = Vector2( 833.159, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela7"]
 visible = false
@@ -1047,17 +1021,19 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela7"]
-position = Vector2( 408.938, 599.302 )
+position = Vector2( 854.333, 600 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 4 )
 
 [node name="saída ponto B" type="Sprite" parent="tela7"]
-position = Vector2( 1004.8, 49.5427 )
+position = Vector2( 385.777, 50 )
+scale = Vector2( -1, 1 )
 z_index = -1
 texture = ExtResource( 11 )
 
 [node name="tela8" type="Node2D" parent="."]
-position = Vector2( 0, -4788.53 )
+position = Vector2( 0, -4793.64 )
 
 [node name="bg" type="Sprite" parent="tela8"]
 position = Vector2( 1.10803, -0.698364 )
@@ -1081,19 +1057,52 @@ visible = false
 shape = SubResource( 14 )
 one_way_collision = true
 
-[node name="plat_static10" parent="tela8" instance=ExtResource( 7 )]
-position = Vector2( 527.002, 196.232 )
-
 [node name="plat_static9" parent="tela8" instance=ExtResource( 7 )]
-position = Vector2( 411.002, 199.072 )
+position = Vector2( 504.895, 68.0717 )
+rotation = 4.71239
+
+[node name="plat_static11" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 504.895, 200.836 )
+rotation = 4.71239
+
+[node name="plat_static12" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 504.895, 469.623 )
+rotation = 4.71239
+
+[node name="plat_static16" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 790.344, 302.101 )
+rotation = 1.5708
+
+[node name="plat_static15" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 790.344, 438.123 )
+rotation = 1.5708
+
+[node name="plat_static14" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 790.343, 570.888 )
+rotation = 1.5708
 
 [node name="plat_static8" parent="tela8" instance=ExtResource( 7 )]
-position = Vector2( 291.852, 199.5 )
+position = Vector2( 402.995, 133.852 )
+
+[node name="plat_static17" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 221.208, 315.639 )
+
+[node name="plat_static18" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 402.329, 505.427 )
+
+[node name="plat_static19" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 687.548, 505.427 )
+
+[node name="plat_static24" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 1058.06, 450.247 )
+
+[node name="plat_static23" parent="tela8" instance=ExtResource( 7 )]
+position = Vector2( 892.854, 265.487 )
 
 [node name="spawn" type="Position2D" parent="tela8" groups=[
 "spawn",
 ]]
-position = Vector2( 1016, 559 )
+position = Vector2( 914.703, 559 )
 
 [node name="NewLevel" type="Area2D" parent="tela8"]
 visible = false
@@ -1107,7 +1116,7 @@ position = Vector2( 0, -101 )
 shape = SubResource( 15 )
 
 [node name="chegada ponto A" type="Sprite" parent="tela8"]
-position = Vector2( 1013, 600 )
+position = Vector2( 887.653, 600 )
 z_index = -1
 texture = ExtResource( 4 )
 
@@ -1117,7 +1126,7 @@ z_index = -1
 texture = ExtResource( 11 )
 
 [node name="relog" type="Node2D" parent="."]
-position = Vector2( 0, -5478.06 )
+position = Vector2( 0, -5477.5 )
 
 [node name="bg" type="Sprite" parent="relog"]
 position = Vector2( 63, -16 )
@@ -1160,7 +1169,7 @@ texture = ExtResource( 4 )
 [node name="spawn" type="Position2D" parent="relog" groups=[
 "spawn",
 ]]
-position = Vector2( 269, 572 )
+position = Vector2( 420.945, 572 )
 
 [node name="NewLevel" type="Area2D" parent="relog"]
 visible = false
